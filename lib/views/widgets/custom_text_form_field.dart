@@ -7,11 +7,13 @@ class CustomTextField extends StatelessWidget {
   String? labelText;
   Function(String)? onChanged;
   bool obscureText;
+  int? maxLins;
   CustomTextField({
     super.key,
     this.onChanged,
     this.labelText,
     this.obscureText = false,
+    this.maxLins = 1,
   });
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,7 @@ class CustomTextField extends StatelessWidget {
         }
         return null;
       },
+      maxLines: maxLins,
       obscureText: obscureText,
       onChanged: onChanged,
       cursorColor: primaryColor,
