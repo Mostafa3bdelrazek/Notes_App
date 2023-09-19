@@ -18,7 +18,7 @@ class defaultButton extends StatelessWidget {
         style: ButtonStyle(
           backgroundColor: const MaterialStatePropertyAll(primaryColor),
           minimumSize:
-              MaterialStateProperty.all<Size>(const Size(double.infinity, 55)),
+              MaterialStateProperty.all<Size>(const Size(double.infinity, 45)),
         ),
         onPressed: onPressed,
         child: Text(
