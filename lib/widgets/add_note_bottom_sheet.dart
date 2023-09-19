@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../reusable components/custom_text_form_field.dart';
-import '../../reusable components/defaultButton.dart';
+import '../reusable components/custom_text_form_field.dart';
+import '../reusable components/defaultButton.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
