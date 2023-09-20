@@ -1,12 +1,12 @@
-// ignore_for_file: file_names, camel_case_types, must_be_immutable
+// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
 import 'package:notes/constants.dart';
 
-class defaultButton extends StatelessWidget {
-  String text;
-  VoidCallback? onPressed;
-  defaultButton({required this.onPressed, required this.text, super.key});
+class DefaultButton extends StatelessWidget {
+  final String text;
+  final VoidCallback? onPressed;
+  const DefaultButton({required this.onPressed, required this.text, super.key});
   @override
   Widget build(BuildContext context) {
     return Container(

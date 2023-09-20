@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
-
-// ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
-  String? labelText;
-  Function(String)? onChanged;
-  bool obscureText;
-  int? maxLins;
-  CustomTextField({
+  final String? labelText;
+  final Function(String)? onChanged;
+  final void Function(String?)? onSaved;
+  final bool obscureText;
+  final int? maxLins;
+  const CustomTextField({
     super.key,
     this.onChanged,
     this.labelText,
     this.obscureText = false,
     this.maxLins = 1,
+    this.onSaved,
   });
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       validator: (data) {
-        if (data!.isEmpty) {
+        if (data?.isEmpty?? true) {
           return 'field is required';
         }
         return null;
@@ -27,6 +27,7 @@ class CustomTextField extends StatelessWidget {
       maxLines: maxLins,
       obscureText: obscureText,
       onChanged: onChanged,
+      onSaved: onSaved,
       cursorColor: kprimaryColor,
       decoration: InputDecoration(
         labelText: labelText,
