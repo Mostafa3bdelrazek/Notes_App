@@ -16,7 +16,7 @@ class defaultButton extends StatelessWidget {
       ),
       child: ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: const MaterialStatePropertyAll(primaryColor),
+          backgroundColor: const MaterialStatePropertyAll(kprimaryColor),
           minimumSize:
               MaterialStateProperty.all<Size>(const Size(double.infinity, 45)),
         ),

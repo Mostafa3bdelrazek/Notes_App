@@ -27,17 +27,17 @@ class CustomTextField extends StatelessWidget {
       maxLines: maxLins,
       obscureText: obscureText,
       onChanged: onChanged,
-      cursorColor: primaryColor,
+      cursorColor: kprimaryColor,
       decoration: InputDecoration(
         labelText: labelText,
-        labelStyle: const TextStyle(color: primaryColor),
+        labelStyle: const TextStyle(color: kprimaryColor),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(
-            color: primaryColor,
+            color: kprimaryColor,
           ),
         ),
       ),
