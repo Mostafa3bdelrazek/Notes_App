@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'custom_icon.dart';
 
-
 // ignore: must_be_immutable
 class CustomAppbar extends StatelessWidget {
-  const CustomAppbar({super.key, required this.title, required this.icon});
+  const CustomAppbar(
+      {super.key, required this.title, required this.icon, this.onPressed});
+  final void Function()? onPressed;
   final String title;
   final IconData icon;
   @override
@@ -17,13 +18,9 @@ class CustomAppbar extends StatelessWidget {
           style: const TextStyle(fontSize: 28),
         ),
         const Spacer(),
-        GestureDetector(
-          onTap: () {
-            
-          },
-          child: CustomIcon(
-            icon: icon ,
-          ),
+        CustomIcon(
+          onPressed: onPressed,
+          icon: icon,
         ),
       ],
     );
