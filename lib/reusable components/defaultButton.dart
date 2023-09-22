@@ -6,7 +6,13 @@ import 'package:notes/constants.dart';
 class DefaultButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
-  const DefaultButton({required this.onPressed, required this.text, super.key});
+  final bool isLoading;
+  const DefaultButton({
+    required this.onPressed,
+    required this.text,
+    super.key,
+    this.isLoading = false,
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,14 +27,22 @@ class DefaultButton extends StatelessWidget {
               MaterialStateProperty.all<Size>(const Size(double.infinity, 45)),
         ),
         onPressed: onPressed,
-        child: Text(
-          text,
-          style: const TextStyle(
-            fontSize: 20,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        child: isLoading
+            ? const SizedBox(
+                height: 24,
+                width: 24,
+                child: CircularProgressIndicator(
+                  color: Colors.black,
+                ),
+              )
+            : Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
       ),
     );
   }
