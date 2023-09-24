@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes/models/note_model.dart';
 
-import '../reusable components/custom_note_item.dart';
+import 'custom_note_item.dart';
 
 class NotesListView extends StatelessWidget {
   const NotesListView({super.key});
