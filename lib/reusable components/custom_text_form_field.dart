@@ -10,6 +10,8 @@ class CustomTextField extends StatelessWidget {
   final void Function(String?)? onSaved;
   final bool obscureText;
   final int? maxLins;
+  final Icon? suffixIcon;
+  final Icon? prefixIcon;
   const CustomTextField({
     super.key,
     this.onChanged,
@@ -19,6 +21,8 @@ class CustomTextField extends StatelessWidget {
     this.onSaved,
     this.hintText,
     this.controller,
+    this.suffixIcon,
+    this.prefixIcon,
   });
   @override
   Widget build(BuildContext context) {
@@ -36,6 +40,8 @@ class CustomTextField extends StatelessWidget {
       onSaved: onSaved,
       cursorColor: kprimaryColor,
       decoration: InputDecoration(
+        prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
         hintText: hintText,
         labelText: labelText,
         labelStyle: const TextStyle(color: kprimaryColor),
