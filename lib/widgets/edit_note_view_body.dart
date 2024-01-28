@@ -17,6 +17,16 @@ class EditNoteViewBody extends StatefulWidget {
 
 class _EditNoteViewBodyState extends State<EditNoteViewBody> {
   String? title, content;
+  TextEditingController textField1Controller = TextEditingController();
+  TextEditingController textField2Controller = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    textField1Controller.text = widget.note.title;
+    textField2Controller.text = widget.note.subTitle;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -37,19 +47,19 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
           ),
           const SizedBox(height: 32),
           CustomTextField(
+            controller: textField1Controller,
             onChanged: (p0) {
               title = p0;
             },
             labelText: 'title',
-            hintText: widget.note.title,
           ),
           const SizedBox(height: 16),
           CustomTextField(
+            controller: textField2Controller,
             onChanged: (p0) {
               content = p0;
             },
             labelText: 'content',
-            hintText: widget.note.subTitle,
             maxLins: 5,
           ),
           EditNoteColorsListView(
