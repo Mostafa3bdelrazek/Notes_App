@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kprimaryColor = Colors.white;
-// const kprimaryColor = Color(0xff62FDC7);
+const kprimaryColor = Color(0xff62FDC7);
 const kNotesBox = 'notes_box';
 List<Color> kcolors = const [
   Colors.blue,
