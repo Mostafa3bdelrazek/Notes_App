@@ -45,9 +45,7 @@ class NotesItem extends StatelessWidget {
               ),
               trailing: IconButton(
                 onPressed: () {
-                  note.delete();
-
-                  BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                  showConfirmationDialog(context);
                 },
                 icon: const Icon(Icons.delete),
                 color: Colors.black,
@@ -64,6 +62,35 @@ class NotesItem extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  //==================================================
+  void showConfirmationDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Confirmation'),
+          content: const Text('Do you want to delete?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                note.delete();
+                BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+              },
+              child: const Text('Yes'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); 
+              },
+              child: const Text('No'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
